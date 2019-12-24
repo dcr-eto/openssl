@@ -12,7 +12,7 @@ jobs:
     - name: lister
       run: ls
     - name: configure
-      run: ./config
+      run: ./config -no-asm
     - name: make
       run: make
     - name: make check
