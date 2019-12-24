@@ -13,6 +13,10 @@ jobs:
       run: ls
     - name: Verif maven
       run: mvn -U clean
+    - name: lister
+      run: ls
+    - name: lister secucpp
+      run: ls secucpp
     - name: configure avec generation des template seul
       run: ./config -no-asm -E
     - name: make depend
