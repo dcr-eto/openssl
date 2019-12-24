@@ -9,7 +9,7 @@ jobs:
     
     steps:
     - uses: actions/checkout@v1
-    - name lister
+    - name: lister
       run: ls
     - name: configure
       run: ./configure
