@@ -12,11 +12,13 @@ jobs:
     - name: lister
       run: ls
     - name: configure
-      run: ./configure
+      run: ./config
     - name: make
       run: make
     - name: make check
       run: make check
     - name: make distcheck
       run: make distcheck
+    - name: make test
+      run: make test
       
