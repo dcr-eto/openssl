@@ -1,7 +1,9 @@
 name: C/C++ CI Simple 2
 
-on: [push]
-
+on:
+  push:
+    paths:
+    - '!**/*.yml'
 jobs:
   build:
 
