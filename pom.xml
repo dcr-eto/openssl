@@ -1,57 +1,50 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.qualitesys.wsqualitychecker</groupId>
-  <artifactId>demoopen-ssl-SNAP-DAILY</artifactId>
-  <version>2014_07_03_01</version>
-  <name>demoopen-ssl-SNAP-DAILY</name>
-  <url>http://maven.apache.org</url> 
-  <properties>
-		<sonar.language>cpp</sonar.language>
-		<sonar.debugmode></sonar.debugmode>
-		<!--
-		<sonar.debugcounters>yes</sonar.debugcounters>
-		-->
-		<sonar.global>yes</sonar.global>
-		<sonar.debugskipxsl>yes</sonar.debugskipxsl>
-		<!--
-		<sonar.tailletabtoken>300000</sonar.tailletabtoken>
-		-->
-		<sonar.filecloneignore>\test\</sonar.filecloneignore>
-  </properties>
-  <pluginRepositories>
-	<pluginRepository>
-		<id>QualityChecker remote repository</id>
-		<url>http://www.qualitesys.com/mavenrepository/</url>
-	</pluginRepository>
-  </pluginRepositories>
-  <build>
-     <!-- OBLIGATOIRE -->
-	 <!-- Modif D.C. 2019 12 24 pour github
-         <sourceDirectory>openssl</sourceDirectory>
-         -->
-	 <sourceDirectory></sourceDirectory>
-     <plugins>
-      <plugin>
-        <groupId>com.qualitesys.maven.plugins</groupId>
-        <artifactId>qcr-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>PhaseCleanGoalqcrgoalclean</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>qcrgoalclean</goal>
-            </goals>
-          </execution>
-          <execution>
-            <id>PhaseCompileGoalqcrgoalcompile</id>
-            <phase>compile</phase>
-            <goals>
-              <goal>qcrgoalcompile</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">  
+  <modelVersion>4.0.0</modelVersion>  
+  <groupId>com.qualitesys.maven.plugins</groupId>  
+  <artifactId>qcr-maven-plugin</artifactId>  
+   <packaging>maven-plugin</packaging> 
+  <version>LATEST</version>  
+  <name>qcr-maven-plugin Maven Mojo</name>  
+  <url>http://maven.apache.org</url>  
+  <properties> 
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
+    <compileSource>1.6</compileSource>  
+    <sonar.language>java</sonar.language>  
+    <sonar.dynamicAnalysis>false</sonar.dynamicAnalysis>  
+    <sonar.debugmode></sonar.debugmode>  
+    <sonar.debugcounters>yes</sonar.debugcounters>  
+    <sonar.licence>jchirac@ratp.fr</sonar.licence>  
+    <!-- Modif D.C. 2012 12 06 pour generateautotest -->  
+	<!--
+    <sonar.generateautotestignoreabstract>yes</sonar.generateautotestignoreabstract>  
+	-->
+    <sonar.generateautotestignorememory>yes</sonar.generateautotestignorememory> 
+  </properties>  
+  <pluginRepositories> 
+    <pluginRepository> 
+      <id>QualityChecker remote repository</id>  
+      <url>http://www.qualitesys.com/mavenrepository/</url> 
+    </pluginRepository> 
+  </pluginRepositories>  
+  <build> 
+    <sourceDirectory>src\main\java\com\qualitesys</sourceDirectory>  
+    <testSourceDirectory>src\test\java</testSourceDirectory>  
+    <plugins> 
+      <plugin> 
+        <groupId>org.apache.maven.plugins</groupId>  
+        <artifactId>maven-compiler-plugin</artifactId>  
+        <version>2.3.2</version>  
+        <configuration> 
+          <source>${compileSource}</source>  
+          <target>${compileSource}</target> 
+        </configuration> 
+      </plugin>  
+      <plugin> 
+        <groupId>com.qualitesys.maven.plugins</groupId>  
+        <artifactId>qcr-maven-plugin</artifactId> 
+      </plugin>  
     <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-site-plugin</artifactId>
@@ -63,6 +56,11 @@
 	<artifactId>maven-project-info-reports-plugin</artifactId>
 	<version>3.0.0</version>
     </plugin>
-     </plugins>
-  </build>
+    </plugins> 
+  </build>  
+  <description>Maven plugin to QualityChecker</description>  
+  <ciManagement> 
+    <system>hudson</system>  
+    <url>http://localhost:8080/job/qcr-maven-plugin/</url> 
+  </ciManagement>  
 </project>
