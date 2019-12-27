@@ -13,5 +13,7 @@ jobs:
       run: ./config
     - name: make
       run: make
+    - name: ls crypto
+      run: ls crypto
     - name: make test
       run: make test
