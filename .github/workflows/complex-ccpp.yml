@@ -1,7 +1,9 @@
 name: C/C++ CI Complet
 
-on: [push]
-
+on:
+  push:
+    paths:
+    - '!**/*.yml'
 jobs:
   build: 
 
