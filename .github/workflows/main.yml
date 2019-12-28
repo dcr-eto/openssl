@@ -5,10 +5,13 @@ jobs:
   date:
     runs-on: ubuntu-latest
     steps:
+      - name: ls home avant
+        run: ls -l
       # Checkout the branch
       - name: checkout
         uses: actions/checkout@v2-beta # use either @v2-beta or @master. Eventually there will be a @v2 tag.
-      
+      - name: ls home apres
+        run: ls -l
       - name: save current date
         run: |
           # do some operation that changes a file in the git repo
