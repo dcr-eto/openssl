@@ -17,6 +17,8 @@ jobs:
       run: make test
     - name: Run maven site
       run: mvn site
+    - name: ls -l
+      run: ls -l
     - name: ls target/site
       run: ls -l target/site
     - name: Setup git config
