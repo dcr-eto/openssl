@@ -48,6 +48,7 @@
     </plugins> 
   </build> 
   <reporting>
+    <plugins>
     <plugin>
 	<groupId>org.apache.maven.plugins</groupId>
 	<artifactId>maven-site-plugin</artifactId>
@@ -62,6 +63,7 @@
 	<groupId>com.qualitesys.maven.plugins</groupId>
 	<artifactId>qcr-maven-plugin</artifactId>
     </plugin>
+    </plugins>
   </reporting>
   <description>Maven plugin to QualityChecker</description>  
 </project>
