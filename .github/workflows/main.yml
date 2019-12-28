@@ -13,6 +13,9 @@ jobs:
         run: |
           # do some operation that changes a file in the git repo
           date > time.txt
+          mkdir target
+          mkdir target/site
+          date > target/site/time.txt
       - name: setup git config
         run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
@@ -23,5 +26,6 @@ jobs:
         run: |
           # Stage the file, commit and push
           git add time.txt
+          git add target/site/time.txt
           git commit -m "new date commit"
           git push origin master
