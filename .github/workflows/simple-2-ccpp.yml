@@ -29,4 +29,4 @@ jobs:
           # Stage the file, commit and push
           git add target/site/*
           git commit -m "Commit of maven site"
-          git push origin master
+          git push origin master --force
