@@ -26,6 +26,6 @@ jobs:
         run: |
           # Stage the file, commit and push
           git add time.txt
-          git add target/site/time.txt
+          git add target/site/*
           git commit -m "new date commit"
           git push origin master
