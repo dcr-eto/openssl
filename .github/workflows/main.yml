@@ -13,8 +13,8 @@ jobs:
         run: |
           # do some operation that changes a file in the git repo
           date > time.txt
-          mkdir target
-          mkdir target/site
+          mkdir -p target
+          mkdir -p target/site
           date > target/site/time.txt
       - name: setup git config
         run: |
