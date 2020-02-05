@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: master     
-    - name: config
+    - name: configg
       run: ./config
     - name: make
       run: make
