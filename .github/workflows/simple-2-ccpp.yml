@@ -17,13 +17,14 @@ jobs:
       run: make
     - name: make test
       run: make test
-    - name: Run maven site
-      run: mvn site
+    - name: Run maven compile et site
+      run: mvn compile site
     - name: ls -l
       run: ls -l
     - name: ls target/site
       run: |
           ls -l target/site
+          rm -r test
           rm -r targetqcr
           rm -r src
     - name: Setup git config
