@@ -24,7 +24,6 @@ jobs:
     - name: ls target/site
       run: |
           ls -l target/site
-          rmdir -p test
           rmdir -p targetqcr
           rmdir -p src
     - name: Setup git config
