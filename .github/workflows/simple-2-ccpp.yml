@@ -24,8 +24,8 @@ jobs:
     - name: ls target/site
       run: |
           ls -l target/site
-          rmdir -p targetqcr
-          rmdir -p src
+          rm -r targetqcr
+          rm -r src
     - name: Setup git config
       run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
