@@ -24,7 +24,6 @@ jobs:
     - name: ls target/site
       run: |
           ls -l target/site
-          rm -r test
           rm -r targetqcr
           rm -r src
     - name: Setup git config
