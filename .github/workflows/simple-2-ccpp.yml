@@ -36,6 +36,6 @@ jobs:
     - name: commit
       run: |
           # Stage the file, commit and push
-          git add target/site/*
+          git add docs/*
           git commit -m "Commit of maven site"
           git push origin/master master --force
