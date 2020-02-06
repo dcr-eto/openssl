@@ -38,4 +38,5 @@ jobs:
           # Stage the file, commit and push
           git add docs/*
           git commit -m "Commit of maven site"
-          git push origin/master master --force
+          # A virer ?? git push origin/master master --force
+          git push origin master --force
