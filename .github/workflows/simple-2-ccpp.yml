@@ -18,7 +18,9 @@ jobs:
     - name: make test
       run: make test
     - name: Run maven compile et site
-      run: mvn compile site
+      run: |
+          mvn compile
+          mvn site
     - name: ls -l
       run: ls -l
     - name: ls target/site
