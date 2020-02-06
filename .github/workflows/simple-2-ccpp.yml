@@ -27,7 +27,9 @@ jobs:
           ls -l targetqcr
           rm -r targetqcr
     - name: mv target/site vers docs
-      run: mv target/site docs
+      run: |
+          rm -r docs/site
+          mv target/site docs
     - name: Setup git config
       run: |
           # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
